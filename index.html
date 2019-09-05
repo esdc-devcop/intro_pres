@@ -107,7 +107,6 @@ How do we enable ourselves to be the most effective at achieving our goals?
 
 .okay[Move source control to Git]  
 https://git-scm.com/
-
 ---
 
 class: middle
@@ -139,15 +138,68 @@ In addition to being distributed, Git has been designed with performance, securi
 
 ---
 
-## Transferring to Git
+## Migrating to Git
+
+### When can you start? 
+--
+**.okay[Right now!]**
+--
+
+- TFS supports Git and mixing Git/TFVC repos in the same project.
+- Git is the default version control provider for new projects in Azure DevOps (Online & On-Prem).
+- Microsoft advises using Git over TFVC.
+- Integrated Git support in Visual Studio and Visual Studio Code.
+  - You will want to learn some basic commands.
+
+- [Comparison of Git and TFVC capabilities](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/comparison-git-tfvc?view=azure-devops)
+---
+
+## Migration Tool
+
+### git-tfs
+
+- Recommended by Microsoft and Pro Git Book on [Git-SCM](https://git-scm.com/book/en/v2/Git-and-Other-Systems-Migrating-to-Git#_git_tfs).
+
+- [Microsoft - Migrate from TFVC to Git - Advanced Migrations](https://docs.microsoft.com/en-us/azure/devops/learn/git/migrate-from-tfvc-to-git#advanced-migrations)
+  - [GitHub - git-tfs](https://github.com/git-tfs/git-tfs)
+  - [Using git-tfs to migrate from TFVC to Git](https://git-scm.com/book/en/v2/Git-and-Other-Systems-Migrating-to-Git#_git_tfs)
+
 
 ---
 
-## Hosting Git platforms
+## Hosting your Git Repositories
 
-- TFS :(
-- GCcode :|
-- GitHub :)
+### .okay[Great! You've got a local Git repo. Now what?]
+--
+
+Pick a hosting service for your version control! (Remote Repository)
+--
+
+- **TFS** - *Status quo*
+--
+
+  - Keep your old toys.
+      - Work Items
+      - Build/Release Definitions
+      - Test Plans
+      - etc.
+--
+  - Might improve with Azure DevOps Server.
+--
+
+- **GCcode** - *New Initiatives/Projects*
+--
+
+  - Shiny new toys!
+--
+
+  - Learning curve
+--
+
+  - Babystep towards sharing code publicly.
+      - *Keep secrets out of your repos!*
+--
+- **GitHub** - *Future Goal?*
 
 ---
 
@@ -188,7 +240,10 @@ class: middle, center
     </script>
     <script>
       var slideshow = remark.create({
-        ratio: `16:9`
+        ratio: `16:9`,
+
+        // Enable or disable counting of incremental slides in the slide counting
+        countIncrementalSlides: false
       });
     </script>
   </body>
