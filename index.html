@@ -32,6 +32,7 @@ $profile-gray: #eaebed;
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
       .whoah { color: #d3080c }
       .okay { color: #278400 }
+      blockquote { font-style: italic; font-weight: bold; }
     </style>
   </head>
   <body>
@@ -184,11 +185,40 @@ Stages of Git
 
 - TFS supports Git and mixing Git/TFVC repos in the same project.
 - Git is the default version control provider for new projects in Azure DevOps (Online & On-Prem).
-- Microsoft advises using Git over TFVC.
 - Integrated Git support in Visual Studio and Visual Studio Code.
   - You will want to learn some basic commands.
+- Comparison table showing that Git can do everything that TFVC can.
+  - [Comparison of Git and TFVC capabilities](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/comparison-git-tfvc?view=azure-devops)
+---
 
-- [Comparison of Git and TFVC capabilities](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/comparison-git-tfvc?view=azure-devops)
+## Migrating to Git
+
+### Keep your history in the past!
+
+Quote from Microsoft's [Plan your migration to Git - Migrating history](https://docs.microsoft.com/en-us/azure/devops/learn/git/centralized-to-git#migrating-history):
+
+> "For most development teams, the time spent trying to migrate history is typically better spent on other areas of the migration that have a higher return on investment, especially improving processes. [...] In almost all cases, we recommend the tip migration."
+
+--
+
+- Microsoft suggests doing **tip migrations**.
+  - Bring only a snapshot of the most recent version of a branch into Git.
+---
+
+## Migrating to Git
+
+### Keep your history in the past!
+
+- Why?
+  - Lossy process, at best.
+  - Possibly misleading.
+  - High level of effort involved.
+  - Relative rarity usage of the history.
+--
+
+- Where *do* you keep the history then?
+  - In your old version control system!
+  - Refer to your old repositories in your README.md files.
 ---
 
 ## Migration Tool
@@ -196,6 +226,7 @@ Stages of Git
 ### git-tfs
 
 - Recommended by Microsoft and Pro Git Book on [Git-SCM](https://git-scm.com/book/en/v2/Git-and-Other-Systems-Migrating-to-Git#_git_tfs).
+- Tool takes a long time to extract history.
 
 - [Microsoft - Migrate from TFVC to Git - Advanced Migrations](https://docs.microsoft.com/en-us/azure/devops/learn/git/migrate-from-tfvc-to-git#advanced-migrations)
   - [GitHub - git-tfs](https://github.com/git-tfs/git-tfs)
@@ -230,13 +261,13 @@ Pick a hosting service for your version control! (Remote Repository)
   - Shiny new toys!
 --
 
-  - Learning curve
+  - Learning curve (GitLab specifics)
 --
 
   - Babystep towards sharing code publicly.
       - *Keep secrets out of your repos!*
 --
-- **GitHub** - *Future Goal?*
+- **GitHub** - *End Goal?*
 
 ---
 
