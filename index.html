@@ -195,19 +195,9 @@ Stages of Git
 
 ### Keep your history in the past!
 
-Quote from Microsoft's [Plan your migration to Git - Migrating history](https://docs.microsoft.com/en-us/azure/devops/learn/git/centralized-to-git#migrating-history):
-
-> "For most development teams, the time spent trying to migrate history is typically better spent on other areas of the migration that have a higher return on investment, especially improving processes. [...] In almost all cases, we recommend the tip migration."
-
---
-
 - Microsoft suggests doing **tip migrations**.
   - Bring only a snapshot of the most recent version of a branch into Git.
----
-
-## Migrating to Git
-
-### Keep your history in the past!
+--
 
 - Why?
   - Lossy process, at best.
@@ -221,55 +211,69 @@ Quote from Microsoft's [Plan your migration to Git - Migrating history](https://
   - Refer to your old repositories in your README.md files.
 ---
 
+## Migrating to Git
+
+### Keep your history in the past!
+
+Quote from Microsoft's [Plan your migration to Git - Migrating history](https://docs.microsoft.com/en-us/azure/devops/learn/git/centralized-to-git#migrating-history):
+
+> "For most development teams, the time spent trying to migrate history is typically better spent on other areas of the migration that have a higher return on investment, especially improving processes. [...] In almost all cases, we recommend the tip migration."
+---
+
 ## Migration Tool
 
 ### git-tfs
 
 - Recommended by Microsoft and Pro Git Book on [Git-SCM](https://git-scm.com/book/en/v2/Git-and-Other-Systems-Migrating-to-Git#_git_tfs).
 - Tool takes a long time to extract history.
-
 - [Microsoft - Migrate from TFVC to Git - Advanced Migrations](https://docs.microsoft.com/en-us/azure/devops/learn/git/migrate-from-tfvc-to-git#advanced-migrations)
   - [GitHub - git-tfs](https://github.com/git-tfs/git-tfs)
   - [Using git-tfs to migrate from TFVC to Git](https://git-scm.com/book/en/v2/Git-and-Other-Systems-Migrating-to-Git#_git_tfs)
-
 
 ---
 
 ## Hosting your Git Repositories
 
-### .okay[Great! You've got a local Git repo. Now what?]
+### Great! You've got a local Git repo. 
+--
+.whoah[Now what?]
 --
 
-Pick a hosting service for your version control! (Remote Repository)
---
-
-- **TFS** - *Status quo*
---
-
-  - Keep your old toys.
-      - Work Items
-      - Build/Release Definitions
-      - Test Plans
-      - etc.
---
-  - Might improve with Azure DevOps Server.
---
-
-- **GCcode** - *New Initiatives/Projects*
---
-
-  - Shiny new toys!
---
-
-  - Learning curve (GitLab specifics)
---
-
-  - Babystep towards sharing code publicly.
-      - *Keep secrets out of your repos!*
---
-- **GitHub** - *End Goal?*
-
+- Pick a hosting service for your version control! (Remote Repository)
+  - **TFS** - *Status Quo*
+  - **GCcode** - *New Initiatives/Projects*
+  - **GitHub** - *End Goal*
 ---
+
+## Hosting your Git Repositories
+
+### TFS - Status Quo
+
+- Keep your old toys.
+  - Work Items
+  - Build/Release Definitions
+  - Test Plans
+  - etc.
+- Usability will improve with Azure DevOps Server.
+---
+
+## Hosting your Git Repositories
+
+### GCcode - New Initiatives/Projects
+
+- Shiny new toys!
+- Learning curve (GitLab specifics)
+- Babystep towards sharing code publicly.
+  - *Keep secrets out of your repos!*
+---
+
+## Hosting your Git Repositories
+
+### GitHub - End Goal
+
+- Contributing to Open-Source Software (OSS), not just consuming!
+---
+
 
 class: middle, center
 
