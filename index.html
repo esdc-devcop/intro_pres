@@ -32,7 +32,15 @@ $profile-gray: #eaebed;
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
       .whoah { color: #d3080c }
       .okay { color: #278400 }
-      blockquote { font-style: italic; font-weight: bold; }
+      /* .column:first-of-type {float:left}
+      .column:last-of-type {float:right} */
+      .column-first :nth-child(n), .column-last :nth-child(n) {margin-top: 0px;}
+      /* .column img {
+        max-width:50%;
+        height: auto;
+      } */
+      .split-6040 .column-first {width: 60%; float:left}
+      .split-6040 .column-last {width: 40%; float:right}
     </style>
   </head>
   <body>
@@ -176,55 +184,85 @@ Stages of Git
 
 ---
 
+class: middle, center
+
+## When can you start migrating to Git? 
+
+--
+
+### .okay[Right now!]
+---
+
 ## Migrating to Git
 
-### When can you start? 
---
-**.okay[Right now!]**
+### How can you do it?
+
 --
 
-- TFS supports Git and mixing Git/TFVC repos in the same project.
-- Git is the default version control provider for new projects in Azure DevOps (Online & On-Prem).
+#### 1. Add a Git repository to your TFS Team Project.
+
+- TFS supports mixing Git and TFVC repos in the same project.
+- Git is the default version control provider in TFS and Azure DevOps.
 - Integrated Git support in Visual Studio and Visual Studio Code.
   - You will want to learn some basic commands.
-- Comparison table showing that Git can do everything that TFVC can.
-  - [Comparison of Git and TFVC capabilities](https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/comparison-git-tfvc?view=azure-devops)
+
+--
+
+#### 2. "Clone" your TFVC into a local Git repository.
+
+- There's a tool for that! .okay[**git-tfs**]
+
+--
+
+#### 3. Push local Git repo to Git hosting service.
+
+- One basic command: `git push`
+
 ---
 
 ## Migrating to Git
 
 ### Keep your history in the past!
 
-- Microsoft suggests doing **tip migrations**.
-  - Bring only a snapshot of the most recent version of a branch into Git.
+#### Microsoft suggests doing *.okay[tip migrations]*.
+
+- Bring only a snapshot of the most recent version of a branch into Git.
+
 --
 
-- Why?
-  - Lossy process, at best.
-  - Possibly misleading.
-  - High level of effort involved.
-  - Relative rarity usage of the history.
+#### Why?
+
+- Lossy process, at best.
+- Possibly misleading.
+- High level of effort involved.
+- Relative rarity usage of the history.
+
 --
 
-- Where *do* you keep the history then?
-  - In your old version control system!
-  - Refer to your old repositories in your README.md files.
+#### Where *do* you keep the history then?
+
+- In your old version control system!
+- Refer to your old repositories in your README.md files.
 ---
 
-## Migrating to Git
+class: split-6040, middle, center
 
-### Keep your history in the past!
+.column-first[
+"For most development teams, the time spent trying to migrate history is typically better spent on other areas of the migration that have a higher return on investment, especially improving processes. [...] **.whoah[In almost all cases, we recommend the tip migration.]**"
 
-Quote from Microsoft's [Plan your migration to Git - Migrating history](https://docs.microsoft.com/en-us/azure/devops/learn/git/centralized-to-git#migrating-history):
+\- Microsoft, [Plan your migration to Git - Migrating history](https://docs.microsoft.com/en-us/azure/devops/learn/git/centralized-to-git#migrating-history)
+]
+.column-last[
+![Right-aligned image](https://pbs.twimg.com/profile_images/943235857225363456/Csqj0pwZ_400x400.jpg)
+]
 
-> "For most development teams, the time spent trying to migrate history is typically better spent on other areas of the migration that have a higher return on investment, especially improving processes. [...] In almost all cases, we recommend the tip migration."
 ---
 
 ## Migration Tool
 
 ### git-tfs
 
-- Recommended by Microsoft and Pro Git Book on [Git-SCM](https://git-scm.com/book/en/v2/Git-and-Other-Systems-Migrating-to-Git#_git_tfs).
+- Recommended by [Microsoft](https://docs.microsoft.com/en-us/azure/devops/learn/git/migrate-from-tfvc-to-git#advanced-migrations), [GitLab](https://docs.gitlab.com/ee/user/project/import/tfvc.html) and Git-SCM's [Pro Git Book](https://git-scm.com/book/en/v2/Git-and-Other-Systems-Migrating-to-Git#_git_tfs).
 - Tool takes a long time to extract history.
 - [Microsoft - Migrate from TFVC to Git - Advanced Migrations](https://docs.microsoft.com/en-us/azure/devops/learn/git/migrate-from-tfvc-to-git#advanced-migrations)
   - [GitHub - git-tfs](https://github.com/git-tfs/git-tfs)
@@ -234,37 +272,62 @@ Quote from Microsoft's [Plan your migration to Git - Migrating history](https://
 
 ## Hosting your Git Repositories
 
-### Great! You've got a local Git repo. 
---
-.whoah[Now what?]
---
+### Pick a hosting service for your version control.
 
-- Pick a hosting service for your version control! (Remote Repository)
-  - **TFS** - *Status Quo*
+  - **TFS or Azure DevOps** - *Status Quo*
   - **GCcode** - *New Initiatives/Projects*
   - **GitHub** - *End Goal*
+
+???
+Git Hosting Services are where your remote repositories will live.
+
+They all provide their own flavour of tools and methodologies around DevOps, Issue Tracking, etc.
 ---
+
+class: split-6040
 
 ## Hosting your Git Repositories
 
-### TFS - Status Quo
+### TFS or Azure DevOps *(Online and On-Premise)*
 
+.column-first[
+- Status Quo
 - Keep your old toys.
   - Work Items
   - Build/Release Definitions
   - Test Plans
   - etc.
-- Usability will improve with Azure DevOps Server.
+- Improved usability with Azure DevOps.
+]
+
+--
+
+.column-last[
+![Horse buggy fitted with lights and traffic signs.](./assets/tech-horse-buggy.jpg)
+]
 ---
+
+class: split-6040
 
 ## Hosting your Git Repositories
 
-### GCcode - New Initiatives/Projects
+### GCcode
 
+.column-first[
+- Recommended for new initiatives or projects.
 - Shiny new toys!
-- Learning curve (GitLab specifics)
+- Learning curve
+  - Work Items > Issues, Issue Boards
+  - Build/Release Definitions > Pipelines
+  - Labels
 - Babystep towards sharing code publicly.
-  - *Keep secrets out of your repos!*
+  - *.whoah[Keep secrets out of your repos!]*
+]
+
+--
+
+.column-last[
+]
 ---
 
 ## Hosting your Git Repositories
