@@ -202,27 +202,54 @@ class: middle, center
 #### 1. Add a Git repository to your TFS Team Project.
 
 - TFS supports mixing Git and TFVC repos in the same project.
-- Git is the default version control provider in TFS and Azure DevOps.
 - Integrated Git support in Visual Studio and Visual Studio Code.
   - You will want to learn some basic commands.
+
+???
+- Git is the default version control provider in TFS and Azure DevOps.
 
 --
 
 #### 2. "Clone" your TFVC into a local Git repository.
 
 - There's a tool for that! .okay[**git-tfs**]
+  - Recommended by [Microsoft](https://docs.microsoft.com/en-us/azure/devops/learn/git/migrate-from-tfvc-to-git#advanced-migrations), [GitLab](https://docs.gitlab.com/ee/user/project/import/tfvc.html) and Git-SCM's [Pro Git Book](https://git-scm.com/book/en/v2/Git-and-Other-Systems-Migrating-to-Git#_git_tfs).
+  - Tool takes a long time to process. (~30 mins for 1 GB TFVC repo)
 
 --
 
 #### 3. Push local Git repo to Git hosting service.
 
 - One basic command: `git push`
+---
 
+## Migration Tool
+
+### git-tfs - Sample Run
+
+```cs
+# 1. Clone from existing TFS Team Project.
+git tfs quick-clone "http://tfs.intra.dmz:8080/tfs/projectcollection" "$/EWS-SWE" .
+
+# 2. Verify integrity of the cloned files.
+git tfs verify
+
+# 3. Push to remote repository. 
+git remote add origin "http://tfs.intra.dmz:8080/tfs/projectcollection/EWS-SWE/_git/EWS-SWE-Git"
+git push --all origin
+```
+---
+
+class: middle, center
+
+## How do you deal with the history?
 ---
 
 ## Migrating to Git
 
 ### Keep your history in the past!
+
+--
 
 #### Microsoft suggests doing *.okay[tip migrations]*.
 
@@ -241,7 +268,7 @@ class: middle, center
 
 #### Where *do* you keep the history then?
 
-- In your old version control system!
+- In your old TFS Team Project or TFVC repository.
 - Refer to your old repositories in your README.md files.
 ---
 
@@ -255,19 +282,12 @@ class: split-6040, middle, center
 .column-last[
 ![Right-aligned image](https://pbs.twimg.com/profile_images/943235857225363456/Csqj0pwZ_400x400.jpg)
 ]
-
 ---
 
-## Migration Tool
+class: middle, center
 
-### git-tfs
-
-- Recommended by [Microsoft](https://docs.microsoft.com/en-us/azure/devops/learn/git/migrate-from-tfvc-to-git#advanced-migrations), [GitLab](https://docs.gitlab.com/ee/user/project/import/tfvc.html) and Git-SCM's [Pro Git Book](https://git-scm.com/book/en/v2/Git-and-Other-Systems-Migrating-to-Git#_git_tfs).
-- Tool takes a long time to extract history.
-- [Microsoft - Migrate from TFVC to Git - Advanced Migrations](https://docs.microsoft.com/en-us/azure/devops/learn/git/migrate-from-tfvc-to-git#advanced-migrations)
-  - [GitHub - git-tfs](https://github.com/git-tfs/git-tfs)
-  - [Using git-tfs to migrate from TFVC to Git](https://git-scm.com/book/en/v2/Git-and-Other-Systems-Migrating-to-Git#_git_tfs)
-
+## Moving day!
+### (Push your code to a remote repository.)
 ---
 
 ## Hosting your Git Repositories
@@ -314,19 +334,16 @@ class: split-6040
 ### GCcode
 
 .column-first[
-- Recommended for new initiatives or projects.
 - Shiny new toys!
 - Learning curve
   - Work Items > Issues, Issue Boards
   - Build/Release Definitions > Pipelines
   - Labels
+  - Merge/Pull Requests (Code Reviews!)
+  - Branch Policies
+- Recommended for new initiatives or projects.
 - Babystep towards sharing code publicly.
   - *.whoah[Keep secrets out of your repos!]*
-]
-
---
-
-.column-last[
 ]
 ---
 
