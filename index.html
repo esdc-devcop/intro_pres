@@ -239,9 +239,6 @@ class: middle, center
 # 1. Clone from existing TFS Team Project.
 git tfs quick-clone "http://tfs.intra.dmz:8080/tfs/projectcollection" "$/EWS-SWE" .
 
-# 2. Verify integrity of the cloned files.
-git tfs verify
-
 # 3. Push to remote repository. 
 git remote add origin "http://tfs.intra.dmz:8080/tfs/projectcollection/EWS-SWE/_git/EWS-SWE-Git"
 git push --all origin
