@@ -4,5 +4,5 @@
 
 ## Drafts
 
-* [Strategy](https://esdc-devcop.github.io/intro_pres/presentations/strategy.html) (TBD)
-* [GitFlow](https://esdc-devcop.github.io/intro_pres/presentations/gitflow.html) (TBD)
+* [Strategy](https://esdc-devcop.github.io/intro_pres/presentations/strategy.html)
+* [GitFlow](https://esdc-devcop.github.io/intro_pres/presentations/gitflow.html)
