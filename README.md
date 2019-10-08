@@ -1,5 +1,8 @@
 # DevCop Presentations
 
-* [Strategy](https://esdc-devcop.github.io/intro_pres/presentations/strategy.html) (October 2019)
-* [GitFlow](https://esdc-devcop.github.io/intro_pres/presentations/gitflow.html) (October 2019)
-* [TFVC to Git - Intro](https://esdc-devcop.github.io/intro_pres/) (September 2019)
+* [Migrate to Git](https://esdc-devcop.github.io/presentations/migrate-to-git.html) (September 2019)
+
+## Drafts
+
+* [Strategy](https://esdc-devcop.github.io/presentations/strategy.html)
+* [GitFlow](https://esdc-devcop.github.io/presentations/gitflow.html)
