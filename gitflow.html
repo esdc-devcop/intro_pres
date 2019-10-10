@@ -52,31 +52,171 @@ class: middle
 ## A branching model for Git
         
 .right[![Right-aligned image](https://avatars2.githubusercontent.com/u/52010894?s=200&v=4)]
-        
+
 ---
-               
-## The Branches
+
+## What Is GitFlow??
+
+--
+GitFlow is a branching model for Git, created by Vincent Driessen. It has attracted a lot of attention because it is very well suited to collaboration and scaling the development team. We think this model is very well suited with our current release process at ESDC.  
+
+--
+### Why Is GitFlow??  
+
+--
+Key Benefits
+
+--
+- Separation of concepts - each branch has clear purpose and flow how to work with it  
+
+--
+- Confidence - at any given point of time master and release branches are stable and ready for production  
+
+--
+- Isolation - you develop independent and isolated feature, so you can focus on problem  
+
+--
+- Continuous processes - continuous deployment and testing for feature branches, continuous integration for master branch
+
+--
+- Code review - pull request allows to increase code quality and knowledge rotation in team, and as a consequence reduce “bus factor”
+
+--
+- Great for a release-based software workflow
 
 ---
 
 ## Standard Working Branch
 
+--
+In the diagram below, you can see the basic pattern of git flow, but while it looks like a bad subway map, it really is an easy pattern to follow.  
+
+![Git Flow](./assets/Git-Flow.png)
 ---
+               
+## The Branches
 
-## Day-to-day working commits
 
+Gitflow separates on isolated branches the code being developed and the code validated and tested. For this, it relies on the creation of several branches whose life cycle is well defined. Here is a list of branches :
+
+--
+- Master
+  - The master is always stable and release ready branch.
+
+--
+- Develop
+  - Develop branch contains latest features and fixes. 
+  - A develop branch is created from master.
+
+--
+- Feature
+  - Branches for feature development and dependencies update.
+  - Feature branches are created from develop.
+
+--
+- Release
+  - Branches for release(production) version. 
+  - A new release branch is based off of develop.
+
+--
+- Hotfix
+  - Hot fixes are made in separate branches based off of master.
+  - Once the hotfix is complete it is merged to both develop and master
 ---
 
 ## Feature development
+
+Each new feature should reside in its own branch, which can be pushed to the central repository for backup/collaboration. But, instead of branching off of master, feature branches use develop as their parent branch. When a feature is complete, it gets merged back into develop. Features should **never** interact directly with master.  
+
+
+--
+Feature branches are generally created off to the latest develop branch.  
+
+
+--
+**git checkout develop**  
+
+--
+**git checkout -b feature_branch**
+
+
+--
+When you’re done with the development work on the feature, the next step is to merge the feature_branch into develop.  
+
+
+--
+**git checkout develop**  
+
+--
+**git merge feature_branch**  
 
 ---
 
 ## Releases
 
+Release branches support preparation of a new production release. Once develop has acquired enough features for a release, you fork a release branch off of develop. At this point—only bug fixes, documentation generation, and other release-oriented tasks should go in this branch.
+
+
+A new release branch can be created using the following methods.  
+
+
+--
+**git checkout develop**  
+
+--
+**git checkout -b release/0.1.0**  
+
+
+--
+To finish a release branch, use the following methods:  
+
+
+--
+**git checkout master**  
+
+--
+**git merge release/0.1.0** 
+
 ---
 
 ## Emergency releases
 
+Maintenance or “hotfix” branches are used to quickly patch production releases. Hotfix branches are a lot like release branches and feature branches except they're based on master instead of develop. This is the only branch that should fork directly off of master. As soon as the fix is complete, it should be merged into both master and develop, and master should be tagged with an updated version number.  
+
+
+--
+A hotfix branch can be created using the following methods:  
+
+
+--
+**git checkout master**  
+
+--
+**git checkout -b hotfix_branch**  
+
+
+--
+When you are done then similar to finishing a release branch, a hotfix branch gets merged into both master and develop.    
+
+
+--
+**git checkout master**  
+
+--
+**git merge hotfix_branch**  
+
+--
+**git checkout develop**  
+
+--
+**git merge hotfix_branch**  
+
+--
+**git branch -D hotfix_branch**  
+
+---
+## Comparison of the Flows
+![Git Workflows](./assets/GitWorkflows.JPG)
 ---
 
 class: middle, center
