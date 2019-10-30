@@ -32,6 +32,7 @@ $profile-gray: #eaebed;
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
       .whoah { color: #d3080c }
       .okay { color: #278400 }
+      .answer { color: blue}
       /* .column:first-of-type {float:left}
       .column:last-of-type {float:right} */
       .column-first :nth-child(n), .column-last :nth-child(n) {margin-top: 0px;}
@@ -53,6 +54,38 @@ class: middle
         
 .right[![Right-aligned image](https://avatars2.githubusercontent.com/u/52010894?s=200&v=4)]
 
+---
+
+## What Is Git Worflow??
+
+--
+Short Answer...  
+
+.answer[A Git Workflow is a recipe or recommendation for how to use Git to accomplish work in a **consistent and productive manner**. Adopting the right workflow for your team so that you collaborate better and spend less time managing version control and more time developing code.]  
+
+
+--
+What is the things to consider when it's the time to choose a workflow?
+
+--
+.answer[
+- Does this workflow scale with team size?
+- Is it easy to undo mistakes and errors with this workflow?
+- Is collaboration important to your workflow?
+- Does this workflow impose any unnecessary overhead to the team?
+]
+
+---
+
+## Comparison of the Workflows
+![Git Workflows](./assets/GitWorkflows.JPG)
+
+---
+
+![Git Workflows](./assets/Workflows.JPG)
+<h3>
+.whoah[But remember that these workflows are designed to be guidelines rather than concrete rules!]
+</h3>
 ---
 
 ## What Is GitFlow??
@@ -216,9 +249,6 @@ When you are done then similar to finishing a release branch, a hotfix branch ge
 --
 **git branch -D hotfix_branch**  
 
----
-## Comparison of the Flows
-![Git Workflows](./assets/GitWorkflows.JPG)
 ---
 
 class: middle, center
