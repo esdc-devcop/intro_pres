@@ -96,28 +96,25 @@ It has attracted a lot of attention because it is well suited for collaboration 
 We have successful experiences using GitFlow cohesively with our existing release process at ESDC.  
 
 --
-### Why GitFlow??  
+### Why we recommand using GitFlow??  
 
 --
-Key Benefits
+- The workflow is great for a release-based software workflow as we do here in IITB.
 
 --
-- Separation of concepts - each branch has clear purpose and flow how to work with it  
+- For large project as we have here, the workflow fits very well (Large Team).
+
+--
+- Branches segregated - each branch has clear purpose and flow how to work with it  
 
 --
 - Confidence - at any given point of time master and release branches are stable and ready for production  
 
 --
-- Isolation - you develop independent and isolated features, so you can focus on one problem at a time
+- It enables a code freeze without preventing developers from working on the next release.
 
 --
 - Continuous processes - continuous deployment and testing for feature branches, continuous integration for master branch
-
---
-- Code review - pull request allows to increase code quality and knowledge rotation in team, and as a consequence reduce “bus factor”
-
---
-- Great for a release-based software workflow
 
 ---
 
@@ -140,22 +137,24 @@ Gitflow separates on isolated branches the code being developed and the code val
 
 --
 - Develop
-  - Develop branch contains latest features and fixes. 
-  - A develop branch is created from master.
+  - A develop branch contains latest features and fixes. We could call it "pre-prod".
+  - A develop branch is always created from master and eventually merge into master.
 
 --
 - Feature
-  - Branches for feature development and dependencies update.
-  - Feature branches are created from develop.
+  - Feature branches are used to develop new features for the upcoming releases.
+  - Feature branches are created from develop and must merge into develop.
 
 --
 - Release
-  - Branches for release(production) version. 
-  - A new release branch is based off of develop.
+  - Release branches support preparation of a new production release. 
+  - A new release branch is based off of develop. 
+  - When it is ready then it must merge into master and develop.
 
 --
 - Hotfix
-  - Hot fixes are made in separate branches based off of master.
+  - hotfix branches are necessary to act immediately upon an undesired status of master
+  - hotfix branches are made in separate branches based off of master.
   - Once the hotfix is complete it is merged to both develop and master
 ---
 
