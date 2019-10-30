@@ -24,7 +24,7 @@ $profile-gray: #eaebed;
     <style>
       @import 'https://fonts.googleapis.com/css?family=Lato|Noto+Sans&display=swap';
 
-      body { font-family: 'Noto Sans', sans-serif; font-size: 20px; }
+      body { font-family: 'Lato', sans-serif; font-size: 20px;}
       h1 {  font-family: 'Lato', sans-serif; border-bottom: 1px solid #af3c43; font-size: 38px; font-weight:bold }
       h2 { font-family: 'Lato', sans-serif; font-size: 36px; font-weight: bold }
       h3 { font-family: 'Lato', sans-serif; font-size: 24px; font-weight: bold }
@@ -32,7 +32,7 @@ $profile-gray: #eaebed;
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
       .whoah { color: #d3080c }
       .okay { color: #278400 }
-      .answer { color: blue}
+      .note { color: blue}
       /* .column:first-of-type {float:left}
       .column:last-of-type {float:right} */
       .column-first :nth-child(n), .column-last :nth-child(n) {margin-top: 0px;}
@@ -61,7 +61,7 @@ class: middle
 --
 Short Answer...  
 
-.answer[A Git Workflow is a recipe or recommendation for how to use Git to accomplish work in a **consistent and productive manner**. Adopting the right workflow for your team so that you collaborate better and spend less time managing version control and more time developing code.]  
+A Git Workflow is a recipe or recommendation for how to use Git to accomplish work in a .note[**consistent and productive manner**]. Adopting the right workflow for your team so that you collaborate better and spend less time managing version control and more time developing code.  
 
 
 --
@@ -134,10 +134,11 @@ Gitflow separates on isolated branches the code being developed and the code val
 --
 - Master
   - The master is always stable and release ready branch.
+  - Codebase residing in the master branch is considered to be .note[**production-ready**].
 
 --
 - Develop
-  - A develop branch contains latest features and fixes. We could call it "pre-prod".
+  - A develop branch contains latest features and fixes. We could call it .note[**"pre-prod"**].
   - A develop branch is always created from master and eventually merge into master.
 
 --
