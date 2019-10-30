@@ -24,7 +24,7 @@ $profile-gray: #eaebed;
     <style>
       @import 'https://fonts.googleapis.com/css?family=Lato|Noto+Sans&display=swap';
 
-      body { font-family: 'Noto Sans', sans-serif; font-size: 20px; }
+      body { font-family: 'Lato', sans-serif; font-size: 20px;}
       h1 {  font-family: 'Lato', sans-serif; border-bottom: 1px solid #af3c43; font-size: 38px; font-weight:bold }
       h2 { font-family: 'Lato', sans-serif; font-size: 36px; font-weight: bold }
       h3 { font-family: 'Lato', sans-serif; font-size: 24px; font-weight: bold }
@@ -32,7 +32,7 @@ $profile-gray: #eaebed;
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
       .whoah { color: #d3080c }
       .okay { color: #278400 }
-      .answer { color: blue}
+      .note { color: blue}
       /* .column:first-of-type {float:left}
       .column:last-of-type {float:right} */
       .column-first :nth-child(n), .column-last :nth-child(n) {margin-top: 0px;}
@@ -61,7 +61,7 @@ class: middle
 --
 Short Answer...  
 
-.answer[A Git Workflow is a recipe or recommendation for how to use Git to accomplish work in a **consistent and productive manner**. Adopting the right workflow for your team so that you collaborate better and spend less time managing version control and more time developing code.]  
+A Git Workflow is a recipe or recommendation for how to use Git to accomplish work in a .note[**consistent and productive manner**]. Adopting the right workflow for your team so that you collaborate better and spend less time managing version control and more time developing code.  
 
 
 --
@@ -96,28 +96,25 @@ It has attracted a lot of attention because it is well suited for collaboration 
 We have successful experiences using GitFlow cohesively with our existing release process at ESDC.  
 
 --
-### Why GitFlow??  
+### Why we recommand using GitFlow??  
 
 --
-Key Benefits
+- The workflow is great for a release-based software workflow as we do here in IITB.
 
 --
-- Separation of concepts - each branch has clear purpose and flow how to work with it  
+- For large project as we have here, the workflow fits very well (Large Team).
+
+--
+- Branches segregated - each branch has clear purpose and flow how to work with it  
 
 --
 - Confidence - at any given point of time master and release branches are stable and ready for production  
 
 --
-- Isolation - you develop independent and isolated features, so you can focus on one problem at a time
+- It enables a code freeze without preventing developers from working on the next release.
 
 --
 - Continuous processes - continuous deployment and testing for feature branches, continuous integration for master branch
-
---
-- Code review - pull request allows to increase code quality and knowledge rotation in team, and as a consequence reduce “bus factor”
-
---
-- Great for a release-based software workflow
 
 ---
 
@@ -137,26 +134,29 @@ Gitflow separates on isolated branches the code being developed and the code val
 --
 - Master
   - The master is always stable and release ready branch.
+  - Codebase residing in the master branch is considered to be .note[**production-ready**].
 
 --
 - Develop
-  - Develop branch contains latest features and fixes. 
-  - A develop branch is created from master.
+  - A develop branch contains latest features and fixes. We could call it .note[**"pre-prod"**].
+  - A develop branch is always created from master and eventually merge into master.
 
 --
 - Feature
-  - Branches for feature development and dependencies update.
-  - Feature branches are created from develop.
+  - Feature branches are used to develop new features for the upcoming releases.
+  - Feature branches are created from develop and must merge into develop.
 
 --
 - Release
-  - Branches for release(production) version. 
-  - A new release branch is based off of develop.
+  - Release branches support preparation of a new production release. 
+  - A new release branch is based off of develop. 
+  - Once it's release into production, then it must be merged into master and develop.
 
 --
 - Hotfix
-  - Hot fixes are made in separate branches based off of master.
-  - Once the hotfix is complete it is merged to both develop and master
+  - hotfix branches are necessary to act immediately upon an undesired status of master
+  - hotfix branches are made in separate branches based off of master.
+  - Once the hotfix is complete and released into production, then it must be merged to both develop and master
 ---
 
 ## Feature development
