@@ -161,56 +161,26 @@ Gitflow separates on isolated branches the code being developed and the code val
 
 ## Feature development
 
-Each new feature should reside in its own branch, which can be pushed to the central repository for backup/collaboration. But, instead of branching off of master, feature branches use develop as their parent branch. When a feature is complete, it gets merged back into develop. Features should **never** interact directly with master.  
+Each new feature should reside in its own branch, which can be pushed to the central repository for backup/collaboration. But, instead of branching off of master, feature branches use develop as their parent branch. When a feature is complete, it gets merged back into develop. Features should .whoah[**never**] interact directly with master.  
 
 
 --
-Feature branches are generally created off to the latest develop branch.  
+The Feature branch is always created off to the latest .note[**develop**] branch and when it's done then merged back to .note[**develop**] branch.  
 
 
---
-`git checkout develop`
-
---
-**git checkout -b feature_branch**
-
-
---
-When you’re done with the development work on the feature, the next step is to merge the feature_branch into develop.  
-
-
---
-**git checkout develop**  
-
---
-**git merge feature_branch**  
+![Git Flow](./assets/GitFlow-2.png)
 
 ---
 
 ## Releases
 
-Release branches support preparation of a new production release. Once develop has acquired enough features for a release, you fork a release branch off of develop. At this point—only bug fixes, documentation generation, and other release-oriented tasks should go in this branch.
-
-
-A new release branch can be created using the following methods.  
+Release branches support preparation of a new production release. Once develop has acquired enough features for a release, you fork a release branch off of develop. At this point—only bug fixes, documentation generation, and other release-oriented tasks should go in this branch.  
 
 
 --
-**git checkout develop**  
+The new release branch is created off .note[**develop**] and merged to .note[**master**] and then again to .note[**develop**] branch.  
 
---
-**git checkout -b release/0.1.0**  
-
-
---
-To finish a release branch, use the following methods:  
-
-
---
-**git checkout master**  
-
---
-**git merge release/0.1.0** 
+![Git Flow](./assets/GitFlow-3.png)
 
 ---
 
@@ -220,34 +190,9 @@ Maintenance or “hotfix” branches are used to quickly patch production releas
 
 
 --
-A hotfix branch can be created using the following methods:  
+Similar to Release branch, the new hotfix branch is created off .note[**master**] and then merged to .note[**master**] and .note[**develop**].  
 
-
---
-**git checkout master**  
-
---
-**git checkout -b hotfix_branch**  
-
-
---
-When you are done then similar to finishing a release branch, a hotfix branch gets merged into both master and develop.    
-
-
---
-**git checkout master**  
-
---
-**git merge hotfix_branch**  
-
---
-**git checkout develop**  
-
---
-**git merge hotfix_branch**  
-
---
-**git branch -D hotfix_branch**  
+![Git Flow](./assets/GitFlow-4.png)
 
 ---
 
