@@ -149,19 +149,19 @@ Gitflow separates on isolated branches the code being developed and the code val
 --
 - Release
   - Release branches support preparation of a new production release. 
-  - A new release branch is based off of develop. 
+  - A new release branch is based off develop. 
   - Once it's release into production, then it must be merged into master and develop.
 
 --
 - Hotfix
   - hotfix branches are necessary to act immediately upon an undesired status of master
-  - hotfix branches are made in separate branches based off of master.
+  - hotfix branches are made in separate branches based off master.
   - Once the hotfix is complete and released into production, then it must be merged to both develop and master
 ---
 
 ## Feature development
 
-Each new feature should reside in its own branch, which can be pushed to the central repository for backup/collaboration. But, instead of branching off of master, feature branches use develop as their parent branch. When a feature is complete, it gets merged back into develop. Features should .whoah[**never**] interact directly with master.  
+Each new feature should reside in its own branch, which can be pushed to the central repository for backup/collaboration. But, instead of branching off master, feature branches use develop as their parent branch. When a feature is complete, it gets merged back into develop. Features should .whoah[**never**] interact directly with master.  
 
 
 --
@@ -174,7 +174,7 @@ The Feature branch is always created off to the latest .note[**develop**] branch
 
 ## Releases
 
-Release branches support preparation of a new production release. Once develop has acquired enough features for a release, you fork a release branch off of develop. At this point—only bug fixes, documentation generation, and other release-oriented tasks should go in this branch.  
+Release branches support preparation of a new production release. Once develop has acquired enough features for a release, you fork a release branch off develop. At this point—only bug fixes, documentation generation, and other release-oriented tasks should go in this branch.  
 
 
 --
