@@ -67,30 +67,57 @@ It is as simple as the name implies: a request to merge one branch into another.
 - Code review
 - Increase the quality of the product
 - Collaboration and Learning
-- Knowledge of the solution and what others are working on and how it was implemented.
+- Identify design flaws
+- Ensure code reuse (does this function already exist ?)
+- Improve knowledge of the solutions components and what others are working on and how it was implemented.
 ]
 
----
+--
+
+## Merge Request Pre-Requisites
+--
+.answer[
+- Unit tests should go thru a Merge Request prior to committing source code.
+- Source code must go thru pipeline prior to submitting a Merge Request: Unit test, code analyzer, code format, compilation
+]
+
+--
 
 ## Roles and responsibilities of submitter and reviewer
 
 ### Submitter
 --
-GitFlow is a branching model for Git, created by Vincent Driessen.
-It has attracted a lot of attention because it is well suited for collaboration and scaling projects.
-We have successful experiences using GitFlow cohesively with our existing release process at ESDC.  
+
+.answer[
+- Keep Code review short
+- Describe the content of the Merge Request
+- Unit test should be approved prior to comitting source code.
+]
 
 --
 
 ### Reviewer
 --
-GitFlow is a branching model for Git, created by Vincent Driessen.
-It has attracted a lot of attention because it is well suited for collaboration and scaling projects.
-We have successful experiences using GitFlow cohesively with our existing release process at ESDC.  
 
+.answer[
+- Review the code as soon as possible, defer if review is not possible
+- Be effective in comments, Recommend changes in a constructive manner
+- Set aside personal "tastes" for source code.
+- Investigate for design flaws and code reusability (does this code already exist somewhere in the project, does a function already exist for this)
+]
 --
 
+## Comparing small and big Merge Request
 
+
+## Types of Commits
+
+.answer[
+- Merge
+- Commit
+- Squash
+- Rebase
+]
 
 class: middle, center
 
