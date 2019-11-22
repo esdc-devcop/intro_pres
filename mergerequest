@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Merge Requests - Developer's Community of Practice</title>
+    <meta charset="utf-8">
+<!--
+H2: Lato, 36px, bold
+H3: Lato, 24px, bold
+H4: Lato, 22px, bold
+H5: Lato, 20px, bold
+H6: Lato, 19px, plain text
+Body: Noto sans, 20px, plain text 
+$wbGray: #e1e4e7;
+$button-blue: #284162;
+$wbGrayLight: #eaebed;
+$accent-blue: #335075;
+$border-red: #af3c43;
+$active-blue: #243850;
+$search-gray: #e0e0e0;
+$profile-gray: #eaebed;
+-->
+    <style>
+      @import 'https://fonts.googleapis.com/css?family=Lato|Noto+Sans&display=swap';
+      body { font-family: 'Lato', sans-serif; font-size: 20px;}
+      h1 {  font-family: 'Lato', sans-serif; border-bottom: 1px solid #af3c43; font-size: 38px; font-weight:bold }
+      h2 { font-family: 'Lato', sans-serif; font-size: 36px; font-weight: bold }
+      h3 { font-family: 'Lato', sans-serif; font-size: 24px; font-weight: bold }
+      .remark-slide-content { background-image: url(./assets/background.jpg); background-size: cover; }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .whoah { color: #d3080c }
+      .okay { color: #278400 }
+      .note { color: blue}
+      /* .column:first-of-type {float:left}
+      .column:last-of-type {float:right} */
+      .column-first :nth-child(n), .column-last :nth-child(n) {margin-top: 0px;}
+      /* .column img {
+        max-width:50%;
+        height: auto;
+      } */
+      .split-6040 .column-first {width: 60%; float:left}
+      .split-6040 .column-last {width: 40%; float:right}
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+class: middle
+
+# Introducing Merge Requests
+               
+.right[![Right-aligned image](https://avatars2.githubusercontent.com/u/52010894?s=200&v=4)]
+
+---
+
+## What is a Merge Request ?
+
+--
+
+Merge requests allow you to visualize and collaborate on the proposed changes to source code that exist as commits on a given Git branch. 
+A Merge Request (MR) is the basis of GitLab as a code collaboration and version control platform. 
+It is as simple as the name implies: a request to merge one branch into another.
+
+---
+
+
+## What is the goal of a Merge Request ?
+
+--
+.answer[
+- Code review
+- Increase the quality of the product
+- Collaboration and Learning
+- Identify design flaws
+- Ensure code reuse (does this function already exist ?)
+- Improve knowledge of the solutions components and what others are working on and how it was implemented.
+]
+
+---
+
+## Merge Request Pre-Requisites
+
+Source code must go thru pipeline prior to submitting a Merge Request: Unit test, code analyzer, code format, compilation
+
+---
+
+## Roles and responsibilities of submitter and reviewer
+
+### Submitter
+--
+
+.answer[
+- Keep Code review short
+- Describe the content of the Merge Request
+- Unit test should be approved prior to comitting source code.
+]
+
+--
+
+### Reviewer
+--
+
+.answer[
+- Review the code as soon as possible, defer if review is not possible
+- Be effective in comments, Recommend changes in a constructive manner
+- Set aside personal "tastes" for source code.
+- Investigate for design flaws and code reusability (does this code already exist somewhere in the project, does a function already exist for this)
+]
+
+---
+
+## Comparing small and big Merge Request
+
+
+
+---
+
+## Types of Commits
+
+.answer[
+- Commit
+- Squash
+- Rebase
+]
+
+---
+
+class: middle, center
+
+## We are going to help!
+
+### Another Workshop!  
+#### .okay[DATE]  
+All afternoon, we are available for drop-in (online too!).  
+
+---
+
+class: middle, center
+
+## Collaborate on Slack!
+
+We need your collaboration to make this a success.
+
+### GCDevOpsLeague
+
+#### .okay[gcdevopsleague.slack.com] channel: "esdc-devcop"
+
+---
+
+class: middle, center
+
+## Questions
+        
+    </textarea>
+    <script src="./remark-latest.min.js" type="text/javascript">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        ratio: `16:9`,
+        countIncrementalSlides: false
+      });
+    </script>
+  </body>
+</html>
