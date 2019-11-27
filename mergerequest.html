@@ -66,19 +66,12 @@ It is as simple as the name implies: a request to merge one branch into another.
 
 --
 .answer[
-- Code review
+- Spread knowledge across the team
 - Increase the quality of the product
 - Collaboration and Learning
 - Identify design flaws
-- Ensure code reuse (does this function already exist ?)
-- Improve knowledge of the solutions components and what others are working on and how it was implemented.
+- Code reusability (does function already exist ?)
 ]
-
----
-
-## Merge Request Pre-Requisites
-
-Source code must go thru pipeline prior to submitting a Merge Request: Unit test, code analyzer, code format, compilation
 
 ---
 
@@ -88,9 +81,12 @@ Source code must go thru pipeline prior to submitting a Merge Request: Unit test
 --
 
 .answer[
+- New functions and conditions come with new unit tests
+- Changed functions and conditions don't effect existing unit tests
 - Keep Code review short
-- Describe the content of the Merge Request
-- Unit test should be approved prior to comitting source code.
+- Comment the "difficult" parts of your code.
+- Describe the changes in the Merge Request. Link to task.
+- Changes for a single task or less. Don't mix features.
 ]
 
 --
