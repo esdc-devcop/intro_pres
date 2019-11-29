@@ -80,7 +80,7 @@ They help a team establish, enforce and verify policies on all code changes.
       TODO: ??? Is this would be a good place to talk bout unit testing as a pre-requisite.
 --
 .answer[
-- Spread knowledge across the team
+- Spread knowledge across the team.
 - Increase the quality of the product
 - Collaboration and Learning
 - Identify design flaws
@@ -100,9 +100,9 @@ They help a team establish, enforce and verify policies on all code changes.
 - New functions and conditions come with new unit tests
 - Changed functions and conditions don't effect existing unit tests
 - Keep Code review short
-- Comment the "difficult" parts of your code.
+- Complex sections of code contains comments.
 - Describe the changes in the Merge Request. Link to task.
-- Changes for a single task or less. Don't mix features.
+- Contains a single task. Don't mix features.
 ]
 
 --
@@ -134,9 +134,9 @@ TODO: Show Picture of BigMerge.png, describe why it's not easy for reviewer
 TODO: Find proper understandalbe definitions with images...
       
 .answer[
-- Commit
-- Squash
-- Rebase
+- Merge Commit: Creates a new commit on the branch you're merging to that point to the existing branch and the branch being merged.
+- Squash & Merge: Combine all your merge request’s commits into a single commit, then creates _merge commit_ which retains a clean history.
+- Rebase: Replays all the commits on your branch (creating new commits with identical changes) against the _head_ of the branch you are merging to; then fast-forwards the _head_ of the merging branch to the _head_ of your replayed branch.
 ]
 
 ---
