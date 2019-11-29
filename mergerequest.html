@@ -52,7 +52,7 @@ class: middle
 ---
 
 --
-## What is a Pull Request ?
+## Intro
       
 TODO: Talk about branches to tie in last DevCop and also because merges are only needed when you have multiple branches.
 
@@ -61,15 +61,13 @@ TODO: Talk about branches to tie in last DevCop and also because merges are only
       
 ## What is a Pull Request ?
       
-TODO: Talk about branches to tie in last DevCop and also because merges are only needed when you have multiple branches.
-
-Pull requests are also refered to as Merge Requests on some platforms.
-      
 --
 
 Pull Requests allow you to visualize and collaborate on the proposed changes to source code that exist as commits on a given branch.
 They are a request to merge one branch into another.
 They help a team establish, enforce and verify policies on all code changes.
+      
+Note: Pull requests are also refered to as Merge Requests on some platforms.
 
 ---
 
@@ -84,7 +82,7 @@ They help a team establish, enforce and verify policies on all code changes.
 - Increase the quality of the product
 - Collaboration and Learning
 - Identify design flaws
-- Code reusability (does function already exist ?)
+- Code reusability
 ]
 
 ---
@@ -97,12 +95,13 @@ They help a team establish, enforce and verify policies on all code changes.
  TODO: write examples, and order them in order of importance
       
 .answer[
+- The first reviewer of your code is you. Does it make sense? Did you include something unrelated to the overall purpose of the changes? Did you forget to remove any debugging code?
+- Keep Code review short
+- Describe the changes in the Merge Request. Link to task.
+- Contains a single task. Don't mix features.      
 - New functions and conditions come with new unit tests
 - Changed functions and conditions don't effect existing unit tests
-- Keep Code review short
 - Complex sections of code contains comments.
-- Describe the changes in the Merge Request. Link to task.
-- Contains a single task. Don't mix features.
 ]
 
 --
@@ -114,24 +113,30 @@ They help a team establish, enforce and verify policies on all code changes.
       
 .answer[
 - Review the code as soon as possible, defer if review is not possible
+- When approving a merge, you are just as responsible for the changes as the person who made them. So you should understand them just as well.
 - Be effective in comments, Recommend changes in a constructive manner
-- Set aside personal "tastes" for source code.
 - Investigate for design flaws and code reusability (does this code already exist somewhere in the project, does a function already exist for this)
 ]
 
 ---
 
-## Comparing small and big Merge Request
+## How do I keep reviews from taking up all my time?
 
-TODO: Show Picture of BigMerge.png, describe why it's not easy for reviewer
+.answer[
+- Keep the changes small! If the change is too large and could have been broken appart, reject it.
+- Don’t validate the code in your reivew. Let the pipeline do that work for you. Focus on learning what it is the author is trying to do, and check that what they did makes sense.
+- If you don’t understand the change, ask for more details. Don’t spend time trying to figgure it out, it should be simple enough (or explained in comments) to understand in a minute or two.
+]
       
+TODO: Show Picture of BigMerge.png, describe why it's not easy for reviewer
+TODO: Show Picture of RefactorMerge.png, describe how "big merges" are still possbile if scope is respecte    
  
 
 ---
 
 ## Types of Commits
 
-TODO: Find proper understandalbe definitions with images...
+TODO: Find proper images...
       
 .answer[
 - Merge Commit: Creates a new commit on the branch you're merging to that point to the existing branch and the branch being merged.
@@ -147,9 +152,7 @@ class: middle, center
 
 ### Another Workshop!  
       
-TODO: Add date...
-      
-#### .okay[DATE]  
+#### .okay December 10 
 All afternoon, we are available for drop-in (online too!).  
 
 ---
